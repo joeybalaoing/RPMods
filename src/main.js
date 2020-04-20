@@ -1,4 +1,8 @@
-
+// mods
+//2 player mode 50 
+//Implement a new timing/scoring mechanism that adds time to the clock for successful hits 25
+//Display the time remaining (in seconds) on the screen 15
+//Allow the player to control the Rocket after it's fired 10
 let config = {
     type: Phaser.CANVAS,
     width: 640,

@@ -30,11 +30,11 @@ class Menu extends Phaser.Scene {
 
         this.add.text(centerX, centerY - textSpacer, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
         this.add.text(centerX, centerY, 'Use <--> arrows to move and (F) to Fire', menuConfig).setOrigin(0.5);
-        menuConfig.backgroundColor = '#00FF00';
-        menuConfig.color = '#000';
+        menuConfig.backgroundColor = '#F3B141';
+        menuConfig.color = '#843605';
         this.add.text(centerX, centerY + textSpacer, 'Press <- for Easy or -> for Hard', menuConfig).setOrigin(0.5);
-        menuConfig.backgroundColor = '#3DBAFF';
-        menuConfig.color = "#FFF";
+        menuConfig.backgroundColor = '#F3B141';
+        menuConfig.color = "#843605";
         this.add.text(centerX, centerY + (2 * textSpacer), 'Press UP Arrow for Two Player Mode', menuConfig).setOrigin(0.5);
         
         //defining keys

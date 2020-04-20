@@ -29,16 +29,16 @@ class MenuMulti extends Phaser.Scene {
         let textSpacer = 64;
 
         this.add.text(centerX, centerY - textSpacer, 'TWO PLAYER MODE', menuConfig).setOrigin(0.5);
-        menuConfig.fontSize = '24px';
-        menuConfig.backgroundColor = '#FF4466';
-        menuConfig.color = '#FFF';
+        menuConfig.fontSize = '28px';
+        menuConfig.backgroundColor = '#F3B141';
+        menuConfig.color = '#843605';
         this.add.text(centerX, centerY, 'P1: Use <--> arrows to move and (F) to Fire', menuConfig).setOrigin(0.5);
-        menuConfig.backgroundColor = '#3DBAFF';
-        menuConfig.color = '#FFF';
+        menuConfig.backgroundColor = '#F3B141';
+        menuConfig.color = '#843605';
         this.add.text(centerX, centerY + textSpacer, 'P2: Use <N M> keys to move and (S) to Shoot', menuConfig).setOrigin(0.5);
         menuConfig.fontSize = '28px';
-        menuConfig.backgroundColor = '#00FF00';
-        menuConfig.color = '#000';
+        menuConfig.backgroundColor = '#F3B141';
+        menuConfig.color = '#843605';
         this.add.text(centerX, centerY + (2 * textSpacer), 'Press <- for Easy or -> for Hard', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#F3B141';
         menuConfig.color = '#843605';

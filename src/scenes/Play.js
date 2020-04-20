@@ -80,12 +80,12 @@ class Play extends Phaser.Scene {
         if(game.settings.multiplay == 0){
             this.scoreLeft = this.add.text(69, 54, this.p1Score, this.scoreConfig);
         }else{ 
-            this.scoreConfig.backgroundColor = '#FF4466';
-            this.scoreConfig.color = '#FFF';
+            this.scoreConfig.backgroundColor = '#F3B141';
+            this.scoreConfig.color = '#000';
             this.scoreConfig.align = 'left';
             this.scoreLeft = this.add.text(69, 54, this.p1Score, this.scoreConfig);
-            this.scoreConfig.backgroundColor = '#3DBAFF';
-            this.scoreConfig.color = '#FFF';
+            this.scoreConfig.backgroundColor = '#F3B141';
+            this.scoreConfig.color = '#000';
             this.scoreConfig.align = 'right';
             this.scoreRight = this.add.text(471, 54, this.p2Score, this.scoreConfig);
             this.scoreConfig.backgroundColor = '#F3B141';
@@ -114,7 +114,7 @@ class Play extends Phaser.Scene {
             this.scoreConfig.fixedWidth = 0;
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', 
             this.scoreConfig).setOrigin(0.5);
-            this.add.text(game.config.width/2, game.config.height/2 + 64, '(F)ire to Restart or ← for Menu',
+            this.add.text(game.config.width/2, game.config.height/2 + 64, '(F)ire to Restart or <- for Menu',
             this.scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }
@@ -210,7 +210,7 @@ class Play extends Phaser.Scene {
             ship.alpha = 1;                     //make ship visible again
             boom.destroy();                     //remove explosion sprite
         });
-        
+
         //score increment and repaint
         this.sound.play('sfx_explosion');
     }

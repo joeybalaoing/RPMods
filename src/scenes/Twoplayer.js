@@ -1,6 +1,6 @@
-class Menu extends Phaser.Scene {
+class MenuMulti extends Phaser.Scene {
     constructor() {
-        super("menuScene");
+        super("menuMultiScene");
     }
 
     preload(){
@@ -23,24 +23,31 @@ class Menu extends Phaser.Scene {
         fixedWidth: 0
         }   
 
-        //show menu 
+        //show menu text
         let centerX = game.config.width/2;
         let centerY = game.config.height/2;
         let textSpacer = 64;
 
-        this.add.text(centerX, centerY - textSpacer, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
-        this.add.text(centerX, centerY, 'Use <--> arrows to move and (F) to Fire', menuConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY - textSpacer, 'TWO PLAYER MODE', menuConfig).setOrigin(0.5);
+        menuConfig.fontSize = '24px';
+        menuConfig.backgroundColor = '#FF4466';
+        menuConfig.color = '#FFF';
+        this.add.text(centerX, centerY, 'P1: Use <--> arrows to move and (F) to Fire', menuConfig).setOrigin(0.5);
+        menuConfig.backgroundColor = '#3DBAFF';
+        menuConfig.color = '#FFF';
+        this.add.text(centerX, centerY + textSpacer, 'P2: Use <N M> keys to move and (S) to Shoot', menuConfig).setOrigin(0.5);
+        menuConfig.fontSize = '28px';
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
-        this.add.text(centerX, centerY + textSpacer, 'Press <- for Easy or -> for Hard', menuConfig).setOrigin(0.5);
-        menuConfig.backgroundColor = '#3DBAFF';
-        menuConfig.color = "#FFF";
-        this.add.text(centerX, centerY + (2 * textSpacer), 'Press UP Arrow for Two Player Mode', menuConfig).setOrigin(0.5);
-        
-        //defining keys
+        this.add.text(centerX, centerY + (2 * textSpacer), 'Press <- for Easy or -> for Hard', menuConfig).setOrigin(0.5);
+        menuConfig.backgroundColor = '#F3B141';
+        menuConfig.color = '#843605';
+        this.add.text(centerX, centerY + (3 * textSpacer), 'Press DOWN for One Player Mode', menuConfig).setOrigin(0.5);
+
+        //define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        keyUP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
+        keyDOWN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
     }
 
     update(){
@@ -49,7 +56,7 @@ class Menu extends Phaser.Scene {
             game.settings = {
                 spaceshipSpeed: 3,
                 gameTimer: 60000,
-                multiplay: 0
+                multiplay: 1
             }
             this.sound.play('sfx_select');
             this.scene.start("playScene");
@@ -59,16 +66,16 @@ class Menu extends Phaser.Scene {
             game.settings = {
                 spaceshipSpeed: 4,
                 gameTimer: 45000,
-                multiplay: 0
+                multiplay: 1
             }
             this.sound.play('sfx_select');
             this.scene.start("playScene");
         }
-        if(Phaser.Input.Keyboard.JustDown(keyUP)){
+        if(Phaser.Input.Keyboard.JustDown(keyDOWN)){
             //go to two-player mode
-            game.settings = {multiplay: 1}
+            game.settings = {multiplay: 0}
             this.sound.play('sfx_select');
-            this.scene.start("menuMultiScene");
+            this.scene.start("menuScene");
         }
     }
 }
